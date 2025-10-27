@@ -2,6 +2,8 @@
 
 Quick-start templates for consistent development environments across GitHub Codespaces and local Docker containers.
 
+**→ [Team Usage Guide](TEAM_GUIDE.md)** - Quick reference for teams
+
 ## What Are DevContainers?
 
 DevContainers provide reproducible development environments defined as code. Think "Dockerfile for development" - specify your tools, extensions, and configuration once, and every developer gets the same setup.
@@ -92,18 +94,27 @@ Common customizations:
 - Port forwarding for web servers
 - Project dependency installation
 
-## Helper Scripts (Coming in Phase 4)
+## Helper Script
 
-Future releases will include convenience scripts:
+A convenience script is available to simplify copying templates:
 
 ```bash
-# Will be available soon
-./scripts/copy-template.sh python ~/my-project
-./scripts/list-templates.sh
-./scripts/validate-template.sh python
+# Usage: ./scripts/copy-template.sh <template> <target-directory>
+
+# Examples
+./scripts/copy-template.sh python ~/my-python-project
+./scripts/copy-template.sh node ~/my-react-app
+./scripts/copy-template.sh fullstack ~/my-full-stack-app
+./scripts/copy-template.sh minimal ~/my-custom-project
 ```
 
-For now, use manual `cp` commands as shown above.
+The script will:
+- Validate template exists
+- Warn if overwriting existing `.devcontainer/`
+- Copy template to your project
+- Display next steps
+
+Manual `cp` commands work too if you prefer.
 
 ## Project Status
 
@@ -111,21 +122,21 @@ For now, use manual `cp` commands as shown above.
   - Complete Python development environment
   - Ready for production use
 
-- ✅ **Phase 2: Additional templates** (current)
+- ✅ **Phase 2: Additional templates**
   - Node.js/TypeScript template
   - Full-stack template
   - Minimal template for learning
   - All 4 templates ready to use!
 
-- 🚧 **Phase 3: Shared utilities**
-  - Common scripts across templates
-  - Shared documentation
-  - Extension bundles
+- ✅ **Phase 4: Helper script** (current)
+  - Template copying automation (`copy-template.sh`)
+  - Team usage guide
+  - All core features complete!
 
-- 🚧 **Phase 4: Helper scripts**
-  - Template copying automation
-  - Validation tools
-  - Template comparison
+- 🚧 **Future enhancements** (optional)
+  - Template validation tools
+  - Shared utility library
+  - Template comparison matrix
 
 ## Template Structure
 
