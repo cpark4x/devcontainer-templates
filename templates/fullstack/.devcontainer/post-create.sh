@@ -21,12 +21,12 @@ echo "    ✅ Git configured"
 # Add your project-specific setup here
 # Examples:
 # echo ""
-# echo "📦  Installing project dependencies..."
-# make install
+# echo "📦  Installing backend dependencies..."
+# cd backend && uv sync && cd ..
 #
 # echo ""
-# echo "🗄️  Setting up database..."
-# make db-setup
+# echo "📦  Installing frontend dependencies..."
+# cd frontend && pnpm install && cd ..
 
 echo ""
 echo "========================================="

@@ -22,11 +22,11 @@ echo "    ✅ Git configured"
 # Examples:
 # echo ""
 # echo "📦  Installing project dependencies..."
-# make install
+# pnpm install
 #
 # echo ""
-# echo "🗄️  Setting up database..."
-# make db-setup
+# echo "🏗️  Building project..."
+# pnpm build
 
 echo ""
 echo "========================================="
@@ -34,8 +34,6 @@ echo "✅  Post-create tasks complete at $(date)"
 echo "========================================="
 echo ""
 echo "📋 Development Environment Ready:"
-echo "  • Python: $(python3 --version 2>&1 | cut -d' ' -f2)"
-echo "  • uv: $(uv --version 2>&1)"
 echo "  • Node.js: $(node --version)"
 echo "  • npm: $(npm --version)"
 echo "  • pnpm: $(pnpm --version)"

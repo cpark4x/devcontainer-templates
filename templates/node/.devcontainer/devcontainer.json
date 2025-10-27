@@ -1,0 +1,84 @@
+// GitHub Codespaces Devcontainer Configuration
+// Node.js/TypeScript development template with Claude Code pre-installed
+{
+  "name": "node_devcontainer",
+
+  // Base image: Node.js 20 LTS on Debian Bookworm
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+
+  // Resource requirements
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+
+  // Development tools to install
+  "features": {
+    // Build tools
+    "ghcr.io/jungaretti/features/make:1": {},
+    "ghcr.io/jungaretti/features/vim:1": {},
+
+    // Claude Code CLI - The key tool!
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {},
+
+    // GitHub CLI for Codespace management
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+
+    // Docker-in-Docker (optional, remove if not needed)
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  // Ports to forward (uncomment and customize as needed)
+  // "forwardPorts": [3000, 5173, 8080],
+
+  // Port configuration (uncomment to use)
+  // "portsAttributes": {
+  //   "3000": {
+  //     "label": "Development Server",
+  //     "onAutoForward": "notify"
+  //   },
+  //   "5173": {
+  //     "label": "Vite",
+  //     "onAutoForward": "openBrowser"
+  //   }
+  // },
+
+  // Run this script after container creation
+  "postCreateCommand": "./.devcontainer/post-create.sh",
+
+  // Named container for easier identification in Docker Desktop
+  "runArgs": ["--name=node_devcontainer"],
+
+  // VS Code customizations
+  "customizations": {
+    // GitHub Codespaces settings
+    "codespaces": {
+      "openFiles": [".devcontainer/README.md"]
+    },
+
+    // VS Code extensions to install
+    "vscode": {
+      "extensions": [
+        // AI assistants
+        "anthropic.claude-code",
+        "GitHub.copilot",
+
+        // GitHub integration
+        "github.codespaces",
+
+        // Node.js/TypeScript development
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "firsttris.vscode-jest-runner",
+
+        // General development
+        "aaron-bond.better-comments",
+        "bierner.markdown-mermaid",
+        "bierner.markdown-preview-github-styles",
+        "ms-vscode.makefile-tools",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}

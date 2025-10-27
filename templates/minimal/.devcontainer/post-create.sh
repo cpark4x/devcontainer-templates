@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Post-Create Setup Script
+# Post-Create Setup Script (Minimal)
 # Runs automatically after Codespace container is created
-# Configures Git and reports environment status
+# Basic Git configuration and status report
 
 # Log file for troubleshooting
 LOG_FILE="/tmp/devcontainer-post-create.log"
@@ -14,34 +14,24 @@ echo "Post-create script starting at $(date)"
 echo "========================================="
 
 echo ""
-echo "🔧  Configuring Git for auto-push..."
+echo "🔧  Configuring Git..."
 git config --global push.autoSetupRemote true
 echo "    ✅ Git configured"
 
-# Add your project-specific setup here
-# Examples:
-# echo ""
-# echo "📦  Installing project dependencies..."
-# make install
-#
-# echo ""
-# echo "🗄️  Setting up database..."
-# make db-setup
+# Add your own setup commands here as you build out your environment
+# This template is intentionally minimal - customize as needed!
 
 echo ""
 echo "========================================="
-echo "✅  Post-create tasks complete at $(date)"
+echo "✅  Setup complete at $(date)"
 echo "========================================="
 echo ""
-echo "📋 Development Environment Ready:"
-echo "  • Python: $(python3 --version 2>&1 | cut -d' ' -f2)"
-echo "  • uv: $(uv --version 2>&1)"
-echo "  • Node.js: $(node --version)"
-echo "  • npm: $(npm --version)"
-echo "  • pnpm: $(pnpm --version)"
+echo "📋 Minimal Environment Ready:"
 echo "  • Git: $(git --version | cut -d' ' -f3)"
 echo "  • Make: $(make --version 2>&1 | head -n 1 | cut -d' ' -f3)"
+echo "  • Vim: $(vim --version 2>&1 | head -n 1 | cut -d' ' -f5)"
 echo "  • Claude CLI: $(claude --version 2>&1 || echo 'NOT INSTALLED')"
 echo ""
+echo "💡 This is a minimal starting point. Add tools as needed!"
 echo "💡 Logs saved to: $LOG_FILE"
 echo ""

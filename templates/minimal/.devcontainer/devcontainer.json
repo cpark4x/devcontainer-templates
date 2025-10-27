@@ -1,0 +1,53 @@
+// GitHub Codespaces Devcontainer Configuration
+// Minimal template - Bare essentials for learning and experimentation
+{
+  "name": "minimal",
+
+  // Base image: Ubuntu 24.04 (clean slate)
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+  // Resource requirements
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "16gb"
+  },
+
+  // Essential development tools only
+  "features": {
+    // Basic utilities
+    "ghcr.io/jungaretti/features/make:1": {},
+    "ghcr.io/jungaretti/features/vim:1": {},
+
+    // Claude Code CLI
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {},
+
+    // GitHub CLI
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // Run this script after container creation
+  "postCreateCommand": "./.devcontainer/post-create.sh",
+
+  // Named container for easier identification
+  "runArgs": ["--name=minimal_devcontainer"],
+
+  // VS Code customizations
+  "customizations": {
+    // GitHub Codespaces settings
+    "codespaces": {
+      "openFiles": [".devcontainer/README.md"]
+    },
+
+    // Minimal extensions
+    "vscode": {
+      "extensions": [
+        // AI assistant
+        "anthropic.claude-code",
+
+        // GitHub integration
+        "github.codespaces"
+      ]
+    }
+  }
+}

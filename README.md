@@ -17,9 +17,9 @@ DevContainers provide reproducible development environments defined as code. Thi
 | Template | Use When | Included Tools | Status |
 |----------|----------|----------------|--------|
 | [python](templates/python/) | Pure Python projects | Python 3.11, uv, pytest, ruff, Node.js (tooling) | ✅ Ready |
-| node | Node.js/TypeScript projects | Node 20, pnpm, TypeScript, ESLint | 🚧 Phase 2 |
-| fullstack | Python + Node full-stack | Both Python and Node stacks | 🚧 Phase 2 |
-| minimal | Learning/experimentation | Git, shell tools, Claude Code | 🚧 Phase 2 |
+| [node](templates/node/) | Node.js/TypeScript projects | Node 20, pnpm, npm, ESLint, Prettier | ✅ Ready |
+| [fullstack](templates/fullstack/) | Python + Node full-stack | Python 3.11 + Node 20 + all tools | ✅ Ready |
+| [minimal](templates/minimal/) | Learning/experimentation | Ubuntu 24.04, Git, Make, Claude Code | ✅ Ready |
 
 ## Quick Start
 
@@ -27,7 +27,11 @@ DevContainers provide reproducible development environments defined as code. Thi
 
 Browse the [templates](templates/) directory and read each template's README to understand what's included.
 
-**For Python projects:** Use [templates/python](templates/python/)
+**Quick selection:**
+- Python projects → [templates/python](templates/python/)
+- Node.js projects → [templates/node](templates/node/)
+- Full-stack projects → [templates/fullstack](templates/fullstack/)
+- Learning/custom → [templates/minimal](templates/minimal/)
 
 ### Step 2: Copy to Your Project
 
@@ -103,14 +107,15 @@ For now, use manual `cp` commands as shown above.
 
 ## Project Status
 
-- ✅ **Phase 1: Python template** (current)
+- ✅ **Phase 1: Python template**
   - Complete Python development environment
   - Ready for production use
 
-- 🚧 **Phase 2: Additional templates** (next)
+- ✅ **Phase 2: Additional templates** (current)
   - Node.js/TypeScript template
   - Full-stack template
   - Minimal template for learning
+  - All 4 templates ready to use!
 
 - 🚧 **Phase 3: Shared utilities**
   - Common scripts across templates
@@ -144,14 +149,41 @@ template-name/
 - Python project that needs Node.js tooling
 
 **Don't use when:**
-- Pure Node.js/TypeScript project
-- Need specialized tools (Rust, Go, Java)
+- Pure Node.js/TypeScript project → use [node](templates/node/)
+- Need both Python and Node equally → use [fullstack](templates/fullstack/)
 
-### Future Templates (Phase 2)
+### Node Template
+**Use when:**
+- Pure Node.js/TypeScript projects
+- Frontend apps (React, Vue, Svelte, Angular)
+- Node.js APIs and services
+- JavaScript-based CLI tools
 
-**Node template:** Pure JavaScript/TypeScript projects
-**Fullstack template:** Apps with both Python backend and Node frontend
-**Minimal template:** Learning, experimentation, general-purpose work
+**Don't use when:**
+- Need Python → use [python](templates/python/)
+- Need both Python and Node → use [fullstack](templates/fullstack/)
+
+### Full-Stack Template
+**Use when:**
+- Python backend + Node.js frontend
+- FastAPI/Flask/Django + React/Vue
+- Monorepo with backend + frontend
+- Projects requiring both ecosystems
+
+**Don't use when:**
+- Pure Python → use [python](templates/python/)
+- Pure Node.js → use [node](templates/node/)
+- Just learning → use [minimal](templates/minimal/)
+
+### Minimal Template
+**Use when:**
+- Learning DevContainers
+- Documentation-only repositories
+- Experimenting before choosing a stack
+- Custom tool setup (add your own)
+
+**Don't use when:**
+- Production development → use specific stack template
 
 ## Managing Codespaces
 
