@@ -2,6 +2,8 @@
 
 Quick-start templates for consistent development environments across GitHub Codespaces and local Docker containers.
 
+**📦 Repository:** https://github.com/cpark4x/devcontainer-templates
+
 **→ [Team Usage Guide](TEAM_GUIDE.md)** - Quick reference for teams
 
 ## What Are DevContainers?
